@@ -1,0 +1,15 @@
+# I2S SPH0645
+This project demonstrates how to read data from a single SPH0645LM4H-B I2S mems microphone via DMA and a PIO program
+implementing the I2S protocol.
+
+## Purpose
+The Embassy RP I2S PIO [program](https://github.com/embassy-rs/embassy/blob/main/embassy-rp/src/pio_programs/i2s.rs)
+only demonstrates how to use an I2S peripheral as output. Furthermore, the SPH0645 mic sends data on the trailing
+edge of the clock signal (SCK), which differs from the previous program which is transmits data on the
+leading edge.
+
+## Resources
+* [Mic](https://www.adafruit.com/product/3421)
+* [Mic Datasheet](https://cdn-shop.adafruit.com/product-files/3421/i2S+Datasheet.PDF)
+* [Chapter 3](https://datasheets.raspberrypi.com/pico/raspberry-pi-pico-c-sdk.pdf)
+* [C++ Implementation](https://github.com/vijaymarupudi/sph0645-pico-troubleshooting)
