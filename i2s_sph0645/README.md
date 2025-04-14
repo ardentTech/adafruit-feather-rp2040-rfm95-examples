@@ -9,7 +9,9 @@ edge of the clock signal (SCK), which differs from the previous program which is
 leading edge.
 
 ## Resources
+* [Adafruit Board](https://www.adafruit.com/product/5714)
+* [RP2040 Datasheet](https://datasheets.raspberrypi.com/rp2040/rp2040-datasheet.pdf)
 * [Mic](https://www.adafruit.com/product/3421)
 * [Mic Datasheet](https://cdn-shop.adafruit.com/product-files/3421/i2S+Datasheet.PDF)
-* [Chapter 3](https://datasheets.raspberrypi.com/pico/raspberry-pi-pico-c-sdk.pdf)
+* [PIO Tutorial in Chapter 3](https://datasheets.raspberrypi.com/pico/raspberry-pi-pico-c-sdk.pdf)
 * [C++ Implementation](https://github.com/vijaymarupudi/sph0645-pico-troubleshooting)

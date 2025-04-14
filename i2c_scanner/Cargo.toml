@@ -1,0 +1,17 @@
+[package]
+name = "i2c_scanner"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+cortex-m-rt = "0.7.5"
+embassy-embedded-hal = "0.3.0"
+embassy-executor = { version = "0.7.0", features = ["task-arena-size-98304", "arch-cortex-m", "executor-thread", "executor-interrupt"] }
+embassy-rp = { version = "0.4.0", features = ["unstable-pac", "time-driver", "critical-section-impl", "rp2040"] }
+embedded-hal = "1.0.0"
+embedded-hal-async = "1.0.0"
+embassy-sync = "0.6.2"
+embassy-time = "0.4.0"
+panic-halt = "1.0.0"
+portable-atomic = { version = "1.11.0", features = ["critical-section"] }
+static_cell = "2.1.0"
