@@ -10,7 +10,7 @@ use fixed_macro::__fixed::types::extra::U8;
 const BITS_PER_SAMPLE: u32 = 32;
 const CHANNELS: u32 = 2;
 const CLOCK_CYCLES_PER_BIT: u32 = 2;
-const SAMPLE_RATE_HZ: u32 = 44_100;
+const SAMPLE_RATE_HZ: u32 = 48_000;
 
 // This struct represents an i2s output driver program
 pub struct PioI2sInProgram<'a, PIO: Instance> {
@@ -23,14 +23,14 @@ impl<'a, PIO: Instance> PioI2sInProgram<'a, PIO> {
             ".side_set 2",
             ".wrap_target",
             "    set x, 30             side 0b01", // side 0bWC - W = WS, C = SCK
-            "left_channel:", // active mic (mono)
+            "left:", // active mic (mono)
             "    in pins, 1            side 0b00",
-            "    jmp x-- left_channel  side 0b01", // jump if nonzero and decrement
+            "    jmp x-- left          side 0b01", // jump if nonzero, decrement no matter what
             "    in pins, 1            side 0b10",
             "    set x, 30             side 0b11",
-            "right_channel:", // if using two mics (stereo), adjust this block
+            "right:", // if using two mics (stereo), adjust this block to read data
             "    nop                   side 0b10",
-            "    jmp x-- right_channel side 0b11",
+            "    jmp x-- right         side 0b11",
             "    nop                   side 0b00",
             ".wrap"
         );
@@ -88,7 +88,7 @@ impl<'a, P: Instance, const S: usize> PioI2sIn<'a, P, S> {
 
     fn pio_clock_frequency() -> f64 {
         // 2.048 MHz <= x <= 4.096 MHz
-        (SAMPLE_RATE_HZ * CHANNELS * CLOCK_CYCLES_PER_BIT * BITS_PER_SAMPLE) as f64
+        (SAMPLE_RATE_HZ * CHANNELS * BITS_PER_SAMPLE * CLOCK_CYCLES_PER_BIT) as f64
     }
 
     pub fn read<'b>(&'b mut self, buff: &'b mut [u32]) -> Transfer<'b, AnyChannel> {

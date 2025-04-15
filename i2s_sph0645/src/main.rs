@@ -3,12 +3,14 @@
 
 mod i2s;
 
+use core::mem;
 use embassy_executor::Spawner;
 use embassy_rp::bind_interrupts;
 use embassy_rp::peripherals::PIO0;
 use embassy_rp::pio::Pio;
 use crate::i2s::{PioI2sIn, PioI2sInProgram};
 use panic_halt as _;
+use static_cell::StaticCell;
 
 const BUFFER_SIZE: usize = 960;
 
@@ -39,7 +41,11 @@ async fn main(_spawner: Spawner) {
         &program
     );
 
-    let mut buffer: [u32; 960] = [0u32; BUFFER_SIZE];
-    // trigger transfer of front buffer data from the pio fifo
-    i2s.read(&mut buffer).await;
+    static DMA_BUFFER: StaticCell<[u32; BUFFER_SIZE * 2]> = StaticCell::new();
+    let dma_buffer = DMA_BUFFER.init_with(|| [0u32; BUFFER_SIZE * 2]);
+    let (mut back_buffer, mut front_buffer) = dma_buffer.split_at_mut(BUFFER_SIZE);
+    loop {
+        i2s.read(&mut front_buffer).await;
+        mem::swap(&mut back_buffer, &mut front_buffer);
+    }
 }
