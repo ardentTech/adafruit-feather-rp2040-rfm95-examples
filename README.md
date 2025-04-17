@@ -8,6 +8,8 @@ A collection of various tire-kicking exercises built with [Embassy](https://gith
 | ---------------- | ------------- |
 | [SPH0645 MEMS Mic](https://github.com/ardentTech/adafruit-feather-rp2040-rfm95-examples/tree/main/i2s_sph0645) | I2S, PIO, DMA |
 | [I2C Scanner](https://github.com/ardentTech/adafruit-feather-rp2040-rfm95-examples/tree/main/i2c_scanner      | I2C           |
+| [BSP](https://github.com/ardentTech/adafruit-feather-rp2040-rfm95-examples/tree/main/bsp)              | Abstractions  |
+| [Logging ](https://github.com/ardentTech/adafruit-feather-rp2040-rfm95-examples/tree/main/logging)         | USB           |
 
 
 
