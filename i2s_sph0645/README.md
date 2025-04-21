@@ -8,6 +8,10 @@ only demonstrates how to use an I2S peripheral as output. Furthermore, the SPH06
 edge of the clock signal (SCK), which differs from the previous program which is transmits data on the
 leading edge.
 
+## Notes
+- The Adafruit breakout board ties `SEL` to `GND`
+- The Adafruit breakout board includes the 100K resistor from `SD` to `GND` that the datasheet requires when in a mono config
+
 ## Resources
 * [Adafruit Board](https://www.adafruit.com/product/5714)
 * [RP2040 Datasheet](https://datasheets.raspberrypi.com/rp2040/rp2040-datasheet.pdf)
