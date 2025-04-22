@@ -816,23 +816,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "13dc2df351e3202783a1fe0d44375f7295ffb4049267b0f3018346dc122a1d94"
 
 [[package]]
-name = "lora"
-version = "0.1.0"
-dependencies = [
- "cortex-m-rt",
- "embassy-embedded-hal",
- "embassy-executor",
- "embassy-rp",
- "embassy-sync",
- "embassy-time",
- "embassy-usb-logger",
- "log",
- "lora-phy",
- "panic-halt",
- "static_cell",
-]
-
-[[package]]
 name = "lora-modulation"
 version = "0.1.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -849,6 +832,24 @@ dependencies = [
  "embedded-hal-async",
  "lora-modulation",
  "num-traits",
+]
+
+[[package]]
+name = "lora-tx"
+version = "0.1.0"
+dependencies = [
+ "cortex-m-rt",
+ "embassy-embedded-hal",
+ "embassy-executor",
+ "embassy-rp",
+ "embassy-sync",
+ "embassy-time",
+ "embassy-usb-logger",
+ "log",
+ "lora-phy",
+ "panic-halt",
+ "portable-atomic",
+ "static_cell",
 ]
 
 [[package]]
@@ -1038,6 +1039,9 @@ name = "portable-atomic"
 version = "1.11.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "350e9b48cbc6b0e028b0473b114454c6316e57336ee184ceab6e53f72c178b3e"
+dependencies = [
+ "critical-section",
+]
 
 [[package]]
 name = "precomputed-hash"
