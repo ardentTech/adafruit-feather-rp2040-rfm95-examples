@@ -11,6 +11,7 @@ A collection of various tire-kicking exercises built with [Embassy](https://gith
 | [BSP](https://github.com/ardentTech/adafruit-feather-rp2040-rfm95-examples/tree/main/bsp)              | Abstractions  |
 | [Logging ](https://github.com/ardentTech/adafruit-feather-rp2040-rfm95-examples/tree/main/logging)         | USB           |
 | [Lora TX](https://github.com/ardentTech/adafruit-feather-rp2040-rfm95-examples/tree/main/lora_tx)          | LoRa, SPI     |
+| [Lora RX](https://github.com/ardentTech/adafruit-feather-rp2040-rfm95-examples/tree/main/lora_rx)          | LoRa, SPI     |
 
 
 

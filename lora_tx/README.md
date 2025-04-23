@@ -1,5 +1,5 @@
-# LoRa
-This example demonstrates LoRa P2P transmission.
+# LoRa TX
+This example demonstrates LoRa transmission of a sensor reading.
 
 ## Now
 The on-board LoRa 1276 module was the primary motivation behind selecting the Adafruit board. LoRa's low power
