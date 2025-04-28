@@ -633,7 +633,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "i2s_sph0645"
+name = "i2s_stereo_in"
 version = "0.1.0"
 dependencies = [
  "cortex-m-rt",

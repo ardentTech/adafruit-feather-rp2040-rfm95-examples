@@ -1,12 +1,11 @@
-# I2S SPH0645
+# I2S Mono In
 This project demonstrates how to read data from a single SPH0645LM4H-B I2S mems microphone via DMA and a PIO program
 implementing the I2S protocol.
 
 ## Purpose
-The Embassy RP I2S PIO [program](https://github.com/embassy-rs/embassy/blob/main/embassy-rp/src/pio_programs/i2s.rs)
-only demonstrates how to use an I2S peripheral as output. Furthermore, the SPH0645 mic sends data on the trailing
-edge of the clock signal (SCK), which differs from the previous program which is transmits data on the
-leading edge.
+The Embassy RP I2S PIO [program](https://github.com/embassy-rs/embassy/blob/main/embassy-rp/src/pio_programs/i2s.rs) only demonstrates how to use an I2S peripheral as output. Furthermore, the
+SPH0645 mic sends data on the trailing edge of the clock signal (SCK), which differs from the Embassy example program
+(which transmits data on the leading edge).
 
 ## Notes
 - The Adafruit breakout board ties `SEL` to `GND`

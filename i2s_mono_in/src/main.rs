@@ -20,6 +20,7 @@ bind_interrupts!(struct Irqs {
 
 #[embassy_executor::main]
 async fn main(_spawner: Spawner) {
+    // TODO would PIO I2S be more accurate with the XOSC instead of default ROSC?
     let p = embassy_rp::init(Default::default());
     let Pio { mut common, sm0, .. } = Pio::new(p.PIO0, Irqs);
 
