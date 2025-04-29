@@ -10,6 +10,7 @@ SPH0645 mic sends data on the trailing edge of the clock signal (SCK), which dif
 ## Notes
 - The Adafruit breakout board ties `SEL` to `GND`
 - The Adafruit breakout board includes the 100K resistor from `SD` to `GND` that the datasheet requires when in a mono config
+- - See [here](https://learn.adafruit.com/adafruit-i2s-mems-microphone-breakout/raspberry-pi-wiring-test#wiring-for-mono-mic-3061606) for breadboard setup (board pins will differ)
 
 ## Resources
 * [Adafruit Board](https://www.adafruit.com/product/5714)

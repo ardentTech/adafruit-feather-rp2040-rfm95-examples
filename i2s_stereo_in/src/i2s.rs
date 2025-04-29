@@ -23,7 +23,7 @@ impl<'a, PIO: Instance> PioI2sInProgram<'a, PIO> {
             ".side_set 2",
             ".wrap_target",
             "    set x, 30             side 0b01", // side 0bWC - W = WS, C = SCK
-            "left:", // active mic (mono)
+            "left:",
             "    in pins, 1            side 0b00",
             "    jmp x-- left          side 0b01", // decrement and jump if nonzero
             "    in pins, 1            side 0b10",

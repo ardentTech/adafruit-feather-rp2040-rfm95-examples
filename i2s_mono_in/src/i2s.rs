@@ -28,7 +28,7 @@ impl<'a, PIO: Instance> PioI2sInProgram<'a, PIO> {
             "    jmp x-- left          side 0b01", // jump if nonzero, decrement no matter what
             "    in pins, 1            side 0b10",
             "    set x, 30             side 0b11",
-            "right:", // if using two mics (stereo), adjust this block to read data
+            "right:",
             "    nop                   side 0b10",
             "    jmp x-- right         side 0b11",
             "    nop                   side 0b00",
